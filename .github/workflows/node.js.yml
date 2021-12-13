@@ -19,14 +19,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{matrix.node-version}}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{matrix.node-version}}
         cache: 'npm'
     - run: npm ci
     - name: Serverless
-      uses: serverless/github-action@1.53.0
+      uses: serverless/github-action@1.51.0
       with:
         args: deploy --stage pr
       env:
